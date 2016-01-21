@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Supplychains</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Complete</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supplychains.each do |supplychain| %>
+      <tr>
+        <td><%= supplychain.user_id %></td>
+        <td><%= supplychain.title %></td>
+        <td><%= supplychain.complete %></td>
+        <td><%= link_to 'Show', supplychain %></td>
+        <td><%= link_to 'Edit', edit_supplychain_path(supplychain) %></td>
+        <td><%= link_to 'Destroy', supplychain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supplychain', new_supplychain_path %>
